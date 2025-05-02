@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block name="ajax.addtocart"
+                class="XMageLumen\AjaxAddToCart\Block\AddToCart"
+                template="XMageLumen_AjaxAddToCart::hyva/script/addtocart.phtml"
+                ifconfig="checkout/options/enable_ajax_add_to_cart"/>
+        </referenceContainer>
+    </body>
+</page>
