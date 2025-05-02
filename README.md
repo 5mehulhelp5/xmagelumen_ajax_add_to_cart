@@ -1,4 +1,5 @@
 # Mage2 Module XMageLumen AjaxAddToCart
+## Fully compatible with the Hyvä theme.
 
     ``xMageLumen/module-ajaxaddtocart``
 
