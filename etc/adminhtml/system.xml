@@ -1,40 +1,34 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+
     <system>
-        <section id="checkout">
-            <group id="options" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                <field id="enable_ajax_add_to_cart" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Enable AJAX Add to Cart</label>
+        <section id="quickaddtocart" translate="label" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Quick Add To Cart</label>
+            <tab>devscripts</tab>
+            <resource>DevScripts_QuickAddToCart::config</resource>
+
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+
+                <field id="enabled" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Module</label>
+                    <comment><![CDATA[ Enable or disable the Quick Add To Cart functionality site-wide.]]></comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
 
-                <field id="ajax_add_to_cart_delay" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>AJAX Add to Cart Delay (ms)</label>
-                    <comment>Specify the delay time in milliseconds (e.g., 1000)</comment>
-                    <validate>validate-number required-entry</validate>
-                    <frontend_class>validate-number required-entry</frontend_class>
-                    <depends>
-                        <field id="enable_ajax_add_to_cart">1</field>
-                    </depends>
-                </field>
-
-                <field id="ajax_add_to_cart_selectors" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>AJAX Add to Cart Selectors</label>
-                    <comment>Comma-separated CSS selectors (e.g., .product_addtocart_form, #product_addtocart_form)</comment>
-                    <validate>required-entry</validate>
-                    <frontend_class>required-entry</frontend_class>
-                    <depends>
-                        <field id="enable_ajax_add_to_cart">1</field>
-                    </depends>
-                </field>
-
-                <field id="ajax_cart_open_after_add_to_cart" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Open Cart After Add To Cart</label>
+                <field id="open_minicart" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Open Mini Cart After Add</label>
+                    <comment><![CDATA[ Automatically open the mini cart popup after a product is added.]]></comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <depends>
-                        <field id="enable_ajax_add_to_cart">1</field>
-                    </depends>
                 </field>
+
+                <field id="redirect_cart" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect To Cart Page</label>
+                    <comment><![CDATA[ Redirect customers to the cart page immediately after adding a product.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
             </group>
         </section>
     </system>

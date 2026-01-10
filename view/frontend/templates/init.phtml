@@ -1,0 +1,11 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<script type="text/javascript">
+    window.devScriptsQuickAddToCart = {
+        url: <?= json_encode($block->getUrl('quickaddtocart/ajax/add')) ?> 
+    };
+</script>
+<script type="text/javascript" 
+        src="<?= $block->getViewFileUrl('DevScripts_QuickAddToCart::js/quick-add-to-cart.js') ?>">
+</script>

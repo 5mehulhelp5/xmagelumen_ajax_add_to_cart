@@ -1,7 +1,8 @@
 <?php
-declare(strict_types=1);
-
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'XMageLumen_AjaxAddToCart', __DIR__);
-
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'DevScripts_QuickAddToCart',
+    __DIR__
+);
